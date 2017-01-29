@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StepCounter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,66 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPQ-yh-HXM">
+                                <rect key="frame" x="182" y="252" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRu-Jg-76O">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="stepsButtonWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fbf-I2-1r8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="323-M5-Fy6">
+                                <rect key="frame" x="81" y="252" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Session:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dah-al-jiF">
+                                <rect key="frame" x="31" y="187" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yo0-gm-TK6">
+                                <rect key="frame" x="166" y="187" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="QOF-OE-y1U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PPQ-yh-HXM" firstAttribute="leading" secondItem="323-M5-Fy6" secondAttribute="trailing" constant="46" id="4mS-jC-Wa3"/>
+                            <constraint firstItem="fRu-Jg-76O" firstAttribute="centerX" secondItem="PPQ-yh-HXM" secondAttribute="centerX" id="97w-sU-e21"/>
+                            <constraint firstItem="PPQ-yh-HXM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9wr-7v-h4i"/>
+                            <constraint firstItem="323-M5-Fy6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="232" id="AG1-cc-C6y"/>
+                            <constraint firstItem="Yo0-gm-TK6" firstAttribute="baseline" secondItem="Dah-al-jiF" secondAttribute="baseline" id="JXP-OK-5Kc"/>
+                            <constraint firstItem="PPQ-yh-HXM" firstAttribute="top" secondItem="Yo0-gm-TK6" secondAttribute="bottom" constant="44" id="LPR-ZM-HSn"/>
+                            <constraint firstItem="fRu-Jg-76O" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Pmr-rB-7TE"/>
+                            <constraint firstItem="323-M5-Fy6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="65" id="gnb-EY-TcD"/>
+                            <constraint firstItem="323-M5-Fy6" firstAttribute="baseline" secondItem="PPQ-yh-HXM" secondAttribute="baseline" id="jSx-NQ-lFm"/>
+                            <constraint firstItem="Yo0-gm-TK6" firstAttribute="centerX" secondItem="PPQ-yh-HXM" secondAttribute="centerX" id="k3a-H8-GhP"/>
+                            <constraint firstItem="Yo0-gm-TK6" firstAttribute="leading" secondItem="Dah-al-jiF" secondAttribute="trailing" constant="33" id="vXo-Mk-elx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="controlButton" destination="fRu-Jg-76O" id="Qkv-0b-MFt"/>
+                        <outlet property="lastSessionCounterLabel" destination="Yo0-gm-TK6" id="1jF-8e-ivD"/>
+                        <outlet property="stepsCounterLabel" destination="PPQ-yh-HXM" id="j09-tC-Poa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="134.48275862068968"/>
         </scene>
     </scenes>
 </document>
